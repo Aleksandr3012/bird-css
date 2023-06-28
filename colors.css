@@ -1,0 +1,15 @@
+.colors {
+	position: fixed ;
+	bottom: 0;
+	left: 0;
+	display: flex;
+}
+.colors__block:not(:last-child) {
+	margin-bottom: 2px;
+}
+.colors__block {
+	position: relative;
+	background: var(--bg);
+	width: 40px;
+	height: 40px;
+}

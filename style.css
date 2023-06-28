@@ -1,0 +1,174 @@
+.bird {
+	background: lightyellow;
+	width: 800px;
+	height: 800px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.bird * {
+	position: absolute;
+}
+
+
+
+/*branch*/
+.bird__branch {
+	top: 47.5%;
+	width: 68.5%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	height: 32px;
+	border-radius: 20px;
+	background: saddlebrown;
+}
+
+/*branch lines*/
+.bird__branch:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: repeating-linear-gradient( 90deg,
+		transparent,transparent 20%, white 20.7%
+	);
+}
+
+/*break (nose)*/
+.bird__beak {
+	top: 10.3%;
+	left: 27%;
+	width: 224px;
+	height: 100px;
+	background-color: red;
+	border-radius: 99px 0 0 0;
+	background-image: linear-gradient(
+		90deg,
+		red 0%,
+		red 44%,
+		darkorange 44%,
+		darkorange 69%,
+		yellowgreen 69%,
+		yellowgreen 81%,
+		orange 81%,
+		orange 100%
+	);
+}
+
+/*break (nose) shadow*/
+.bird__beak:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 35%;
+	background-color: rgba(0, 0, 0, .3);
+	border-radius: 120px 0 0 0 / 80px 0 0 0;
+}
+
+/*body*/
+.bird__body {
+	width: 145px;
+	height: 291px;
+	top: 75px;
+	left: 440px;
+	background-image: radial-gradient(
+		gold 70%,
+		transparent 0
+	), radial-gradient(
+		white 40%,
+		transparent 0
+	);
+	background-position: 25px 130px, -83px -30px;
+	background-size: 210px 210px;
+	background-repeat: no-repeat;
+	background-color: black;
+	border-radius: 0 500px 500px 0;
+}
+
+/*eye*/
+.bird__body::after {
+	--size: 34px;
+	position: absolute;
+	content: '';
+	box-sizing: border-box;
+	display: block;
+	width: var(--size);
+	height: var(--size);
+	border-radius: 50%;
+	border: solid 5px cyan;
+	background-color: black;
+	top: 36px;
+	left: 18px;
+	background-image: radial-gradient(
+		white 40%,
+		transparent 0
+	);
+	background-size: 17px 17px;
+	background-position: -4px 7px;
+	background-repeat: no-repeat;
+}
+
+/*backside body*/
+.bird__body::before {
+	content: '';
+	position: absolute;
+	left: -157px;
+	top: 131px;
+	width: 0;
+	height: 0;
+	border: solid 160px;
+	border-color: black transparent transparent transparent;
+	border-radius: 50%;
+	transform: rotate(-45deg);
+}
+
+/*tail*/
+.bird__tail {
+	background-color: black;
+	box-sizing: border-box;
+	top: 358px;
+	left: 267px;
+	width: 104px;
+	height: 173px;
+	border-bottom: solid 13px red;
+	transform: rotate(-8deg);
+	clip-path: polygon(28.18% -4.86%, 0% 91.8%, -2.49% 107.23%, 59.37% 107.53%, 59.89% 91.9%, 55.79% 78.1%, 82.54% 75.71%, 72.39% 54.61%, 98.56% 50.54%, 61.92% 4.34%, 63.76% 3.24%);
+}
+.bird__tail:after {
+	content: '';
+	position: absolute;
+	top: 122px;
+	left: 55px;
+	width: 30px;
+	height: 20px;
+	background-color: darkorange;
+	transform-origin: top left;
+	transform: rotate(-13deg);
+	z-index: 1;
+}
+.bird__tail:before {
+	content: '';
+	position: absolute;
+	top: 81px;
+	left: 70px;
+	width: 30px;
+	height: 20px;
+	background-color: greenyellow;
+	transform-origin: top left;
+	transform: rotate(-20deg);
+}
+
+.bird__image {
+	position: absolute;
+	inset: 0;
+	background: url("image.png") no-repeat;
+	/*opacity: 0.4;*/
+	/*opacity: 1;*/
+	opacity: 0;
+	pointer-events: none;
+	background-size: contain;
+	/*filter: invert(1);*/
+}
